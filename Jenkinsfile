@@ -28,6 +28,7 @@ pipeline {
       steps {
         echo 'Running Spring Boot Application'
         bat '''
+        docker rm -f mysprbootproj-container || exit 0
         docker run --name mysprbootproj-container mysprbootproj:1.0
         
         '''               
